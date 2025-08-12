@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nolecler <nolecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/11 15:24:47 by nolecler          #+#    #+#             */
-/*   Updated: 2025/08/12 11:01:00 by nolecler         ###   ########.fr       */
+/*   Created: 2025/08/12 11:21:47 by nolecler          #+#    #+#             */
+/*   Updated: 2025/08/12 15:52:26 by nolecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include "Animal.hpp"
+#include <iostream>
 
-class Cat : public Animal
+class WrongAnimal 
 {
     public :
-        Cat();
-        Cat(const Cat &copy);
-        Cat &operator=(const Cat &other);
-        ~Cat();
-  
-        void makeSound() const;
+        WrongAnimal();
+        WrongAnimal(const WrongAnimal &copy);
+        WrongAnimal &operator=(const WrongAnimal &other);
+        ~WrongAnimal();
 
+        void makeSound() const;
+        std::string getType() const;
+    
+    protected :
+        std::string _type;
+    
 };
