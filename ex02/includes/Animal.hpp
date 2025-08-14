@@ -6,7 +6,27 @@
 /*   By: nolecler <nolecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 15:26:14 by nolecler          #+#    #+#             */
-/*   Updated: 2025/08/14 15:26:15 by nolecler         ###   ########.fr       */
+/*   Updated: 2025/08/14 21:43:52 by nolecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+#include <iostream>
+
+class Animal
+{
+    public :
+        Animal();
+        Animal(const Animal &copy);
+        Animal &operator=(const Animal &other); 
+        virtual ~Animal();
+    
+        virtual void makeSound() const = 0;
+        std::string getType() const;
+    
+    protected :
+        std::string _type;
+};
+
+// on ne pourra pas instancier Animal 
+// Ex qu on ne pourra pas faire dans le main :  Animal a; mais plutot Dog a; 
