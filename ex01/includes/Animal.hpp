@@ -6,7 +6,7 @@
 /*   By: nolecler <nolecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 09:16:21 by nolecler          #+#    #+#             */
-/*   Updated: 2025/08/13 09:16:41 by nolecler         ###   ########.fr       */
+/*   Updated: 2025/08/14 13:52:18 by nolecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Animal
         Animal();
         Animal(const Animal &copy);
         Animal &operator=(const Animal &other); 
-        virtual ~Animal();
+        virtual ~Animal(); // pour que les destructeurs de cat et dog puissent etre appelé
     
         virtual void makeSound() const; //const la methode ne modifie pas l objet
         std::string getType() const;

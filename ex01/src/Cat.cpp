@@ -6,7 +6,7 @@
 /*   By: nolecler <nolecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 09:19:21 by nolecler          #+#    #+#             */
-/*   Updated: 2025/08/13 12:43:17 by nolecler         ###   ########.fr       */
+/*   Updated: 2025/08/14 14:05:10 by nolecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,31 @@
 
 Cat::Cat() : Animal()
 {
-    this->_type = "Cat";
-    this->_brain = new Brain;
     std::cout << "Cat default constructor called." << std::endl;
+    this->_type = "Cat";
+    this->_brain = new Brain();
 }
 
+// on creer un nouvel objet
+// on alloue dynamiquement un nouvel objet Brain
+// on copie le contenu de copy dans ce nouvel objet
+// donc on a deux pointeurs diff(2 objets diff) mais deux contenus identiques
 Cat::Cat(const Cat &copy) : Animal(copy)
 {
     std::cout << "Cat copy constructor called." << std::endl;
-    this->_brain = copy._brain;
-    //*this = copy;
+    this->_brain = new Brain(*copy._brain);
 }
+
 
 Cat& Cat::operator=(const Cat &other)
 {
     std::cout << "Cat assignation operator called." << std::endl;
-    this->_type = other._type;
+    if (this != &other)// verif si != auto affectation
+    {
+        delete this->_brain;
+        this->_brain = new Brain(*other._brain);
+        Animal::operator=(other); // copie les attributs de animal (_type)
+    }
     return (*this);
 }
 
@@ -46,7 +55,9 @@ void Cat::makeSound() const
     std::cout << "Miaouuu!" << std::endl;
 }
 
+// on recupere un pointeur (adresse) vers l'objet Brain
 Brain* Cat::getBrain() const
 {
     return (this->_brain);
 }
+

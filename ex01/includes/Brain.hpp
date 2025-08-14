@@ -6,7 +6,7 @@
 /*   By: nolecler <nolecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 09:21:00 by nolecler          #+#    #+#             */
-/*   Updated: 2025/08/13 10:57:19 by nolecler         ###   ########.fr       */
+/*   Updated: 2025/08/14 10:54:11 by nolecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,10 @@ class Brain
         ~Brain();
 
 
-        const std::string &getIdeas(int index) const;
-        void setIdeas(int index, const std::string &idea);
+        const std::string &getIdeas(size_t index) const;
+        void setIdeas(size_t index, const std::string &idea);
 
 
     private :
         std::string _ideas[100];
-    
 };

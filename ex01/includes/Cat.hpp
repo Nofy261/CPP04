@@ -6,7 +6,7 @@
 /*   By: nolecler <nolecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 09:17:15 by nolecler          #+#    #+#             */
-/*   Updated: 2025/08/13 12:12:07 by nolecler         ###   ########.fr       */
+/*   Updated: 2025/08/14 11:07:40 by nolecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ class Cat : public Animal
         
         
     private :
-        Brain* _brain;
+        Brain* _brain; // pointeur vers un objet de type Brain
+        //cat contient une adresse memoire (un pointeur vers Brain)
+        // peut pointer vers null
 
 };
 

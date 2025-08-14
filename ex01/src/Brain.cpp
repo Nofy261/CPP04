@@ -6,7 +6,7 @@
 /*   By: nolecler <nolecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 09:19:17 by nolecler          #+#    #+#             */
-/*   Updated: 2025/08/13 13:15:23 by nolecler         ###   ########.fr       */
+/*   Updated: 2025/08/14 10:51:36 by nolecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,24 @@
 
 Brain::Brain()
 {
-    // 
     std::cout << "Brain default constructor called." << std::endl;
+    // for (int i = 0; i < 100; i++)
+    // {
+    //     this->_ideas[i] = "";
+    // }
 }
 
-Brain::Brain(const Brain &copy)
+Brain::Brain(const Brain &copy) // on creer un nouvel objet
 {
     std::cout << "Brain copy constructor called." << std::endl;
-    *this = copy;
+    for (int i = 0; i < 100; i++)
+    {
+        this->_ideas[i] = copy._ideas[i];
+    }
 }
 
+
+// on modifie les valeurs d'un objet deja existant
 Brain& Brain::operator=(const Brain &other)
 {
     std::cout << "Brain assignation operator called." << std::endl;
@@ -35,24 +43,27 @@ Brain& Brain::operator=(const Brain &other)
     return (*this);
 }
 
+
 Brain::~Brain()
 {
     std::cout << "Brain destructor called." << std::endl;
 }
 
-const std::string& Brain::getIdeas(int index) const
+
+const std::string& Brain::getIdeas(size_t index) const
 {
-    // index doit etre entre 0 et 99
-    return (this->_ideas[index]);
+    if (index < 100)
+        return (this->_ideas[index]);
+    std::cout << "Invalid index!" << std::endl;
+    return (this->_ideas[0]); 
 }
 
-void Brain::setIdeas(int index, const std::string &idea)
+
+void Brain::setIdeas(size_t index, const std::string &idea)
 {
-    // index doit etre entre 0 et 99
-    if (index >= 0 && index < 100)
-    {
-        this->_ideas[index] = idea[index];
-    }
-    
+    if (index < 100)
+        this->_ideas[index] = idea;
+    else
+        std::cout << "There is only 100 ideas per brain." << std::endl;
 }
 
