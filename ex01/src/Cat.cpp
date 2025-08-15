@@ -6,7 +6,7 @@
 /*   By: nolecler <nolecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 09:19:21 by nolecler          #+#    #+#             */
-/*   Updated: 2025/08/14 14:05:10 by nolecler         ###   ########.fr       */
+/*   Updated: 2025/08/15 17:00:56 by nolecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ Cat::Cat() : Animal()
 // on alloue dynamiquement un nouvel objet Brain
 // on copie le contenu de copy dans ce nouvel objet
 // donc on a deux pointeurs diff(2 objets diff) mais deux contenus identiques
+// a demontrer dans le main
 Cat::Cat(const Cat &copy) : Animal(copy)
 {
     std::cout << "Cat copy constructor called." << std::endl;
@@ -35,7 +36,7 @@ Cat::Cat(const Cat &copy) : Animal(copy)
 Cat& Cat::operator=(const Cat &other)
 {
     std::cout << "Cat assignation operator called." << std::endl;
-    if (this != &other)// verif si != auto affectation
+    if (this != &other)
     {
         delete this->_brain;
         this->_brain = new Brain(*other._brain);
