@@ -6,7 +6,7 @@
 /*   By: nolecler <nolecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 15:26:14 by nolecler          #+#    #+#             */
-/*   Updated: 2025/08/14 21:43:52 by nolecler         ###   ########.fr       */
+/*   Updated: 2025/08/15 15:57:03 by nolecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ class Animal
         std::string _type;
 };
 
-// on ne pourra pas instancier Animal 
-// Ex qu on ne pourra pas faire dans le main :  Animal a; mais plutot Dog a; 
+// la classe est non instanciable
+ 

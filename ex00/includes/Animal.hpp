@@ -6,7 +6,7 @@
 /*   By: nolecler <nolecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 15:24:43 by nolecler          #+#    #+#             */
-/*   Updated: 2025/08/12 15:49:56 by nolecler         ###   ########.fr       */
+/*   Updated: 2025/08/15 14:26:55 by nolecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Animal
         Animal &operator=(const Animal &other); 
         virtual ~Animal();
     
-        virtual void makeSound() const; //const la methode ne modifie pas l objet
+        virtual void makeSound() const;
         std::string getType() const;
     
     protected :
