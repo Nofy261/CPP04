@@ -6,7 +6,7 @@
 /*   By: nolecler <nolecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 09:19:17 by nolecler          #+#    #+#             */
-/*   Updated: 2025/08/15 17:02:51 by nolecler         ###   ########.fr       */
+/*   Updated: 2025/08/16 13:27:46 by nolecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 Brain::Brain()
 {
     std::cout << "Brain default constructor called." << std::endl;
+    for (int i = 0; i < 100; i++)
+        _ideas[i] = "";
 }
 
 Brain::Brain(const Brain &copy)
@@ -45,8 +47,24 @@ Brain::~Brain()
 }
 
 
-const std::string* Brain::getIdeas(void) const
+const std::string& Brain::getIdea(size_t index) const
 {
-    return (this->_ideas);
+    static const std::string empty = "";
+    if (index < 100)
+        return (this->_ideas[index]);
+    else
+    {
+        std::cout << "Invalid index" << std::endl;
+        return (empty);
+    }
+}
+
+
+void Brain::setIdea(size_t index, const std::string& idea)
+{
+    if (index < 100)
+        this->_ideas[index] = idea;
+    else
+       std::cout << "Invalid index" << std::endl; 
 }
 

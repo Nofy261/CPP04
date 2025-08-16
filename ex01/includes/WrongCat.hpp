@@ -6,7 +6,7 @@
 /*   By: nolecler <nolecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 09:18:27 by nolecler          #+#    #+#             */
-/*   Updated: 2025/08/13 09:18:37 by nolecler         ###   ########.fr       */
+/*   Updated: 2025/08/16 12:56:59 by nolecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,4 @@ class WrongCat : public WrongAnimal
         ~WrongCat();
   
         void makeSound() const;
-
 };

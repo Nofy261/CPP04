@@ -6,7 +6,7 @@
 /*   By: nolecler <nolecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 15:26:14 by nolecler          #+#    #+#             */
-/*   Updated: 2025/08/15 15:57:03 by nolecler         ###   ########.fr       */
+/*   Updated: 2025/08/16 13:00:47 by nolecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,4 @@ class Animal
         std::string _type;
 };
 
-// la classe est non instanciable
  

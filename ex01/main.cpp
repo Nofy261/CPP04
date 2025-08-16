@@ -6,7 +6,7 @@
 /*   By: nolecler <nolecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 09:21:15 by nolecler          #+#    #+#             */
-/*   Updated: 2025/08/15 18:08:10 by nolecler         ###   ########.fr       */
+/*   Updated: 2025/08/16 12:54:56 by nolecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,33 +20,47 @@
 
 int main()
 {
-    Dog rex;
+    Dog *rex = new Dog();
     std::cout << std::endl;
     
-    Dog leo;
+    Dog *bim = new Dog();
     std::cout << std::endl;
 
-    std::cout << "Leo adress " << leo.getBrain() << std::endl;
-    std::cout << "rex adress " << rex.getBrain() << std::endl;
-    std::cout << std::endl;
-
-    leo = rex;
-
-    std::cout << "Leo adress " << leo.getBrain() << std::endl;
-    std::cout << "rex adress " << rex.getBrain() << std::endl;
+    rex->getBrain()->setIdea(0, "need to eat");
+    bim->getBrain()->setIdea(0, "need to sleep");
     std::cout << std::endl;
     
+    std::cout << "bim idea[0] before : " << bim->getBrain()->getIdea(0) << std::endl;
+    std::cout << "rex idea[0] before : " << rex->getBrain()->getIdea(0) << std::endl;
+    std::cout << std::endl;
+
+    std::cout << "bim adress before : " << bim->getBrain() << std::endl;
+    std::cout << "rex adress before : " << rex->getBrain() << std::endl;
+    std::cout << std::endl;
+    
+    *bim = *rex;
+    std::cout << std::endl;
+    
+    std::cout << "bim idea[0] after : " << bim->getBrain()->getIdea(0) << std::endl;
+    std::cout << "rex idea[0] after : " << rex->getBrain()->getIdea(0) << std::endl;
+    std::cout << std::endl;
+    
+    std::cout << "bim adress after : " << bim->getBrain() << std::endl;
+    std::cout << "rex adress after : " << rex->getBrain() << std::endl;
+    std::cout << std::endl;
+    
+    delete rex;
+    delete bim;
     return (0);
-    
 }
+
+
 
 
 // int main() // main du sujet
 // {
-
-
 //     std::cout << std::endl;
-//     const Animal a; // test1 fonctionne ici et pas a l exo d apres 
+//     const Animal a; // test1  
 //     const Animal* j = new Dog();
 //     const Animal* i = new Cat();
 //     std::cout << std::endl;
@@ -68,7 +82,7 @@ int main()
 // int main()
 // {
 //     const int N = 10;
-//     Animal* animals[N];  //Tableau de pointeurs Animal*
+//     Animal* animals[N];
 
 //     for (int i = 0; i < 10; i++)
 //     {
@@ -84,4 +98,3 @@ int main()
 
 //     return (0);
 // }
-

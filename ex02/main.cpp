@@ -6,7 +6,7 @@
 /*   By: nolecler <nolecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 15:26:51 by nolecler          #+#    #+#             */
-/*   Updated: 2025/08/15 16:42:24 by nolecler         ###   ########.fr       */
+/*   Updated: 2025/08/16 13:14:52 by nolecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@
 int main()
 {
     std::cout << std::endl;
-    //const Animal a; // test1 ne fonctionne pas car fonction abstraite donc ne peut pas etre instancié CQFD
+    //const Animal a;
     const Animal* j = new Dog();
     const Animal* i = new Cat();
     std::cout << std::endl;
     
-    // a.makeSound(); // test 1CQFD
+    //a.makeSound();
     j->makeSound(); 
     i->makeSound();
     std::cout << std::endl;
@@ -37,29 +37,3 @@ int main()
     
     return (0);
 }
-
-// int main()
-// {
-//     const int N = 10;
-//     const Animal* animal[N];
-//     std::cout << std::endl;
-    
-//     for (int i = 0; i < 10; i++)
-//     {
-//         if (i < 5)
-//             animal[i] = new Dog();
-//         else
-//             animal[i] = new Cat();
-//     }
-//     std::cout << std::endl;
-//     for (int i = 0; i < 10; i++)
-//     {
-//         animal[i]->makeSound();
-//     }
-//     std::cout << std::endl;
-//     for (int i = 0; i < 10; i++)
-//     {
-//         delete animal[i];
-//     }
-//     return (0);
-// }

@@ -6,7 +6,7 @@
 /*   By: nolecler <nolecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 15:26:42 by nolecler          #+#    #+#             */
-/*   Updated: 2025/08/14 21:48:50 by nolecler         ###   ########.fr       */
+/*   Updated: 2025/08/16 13:09:53 by nolecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ Dog& Dog::operator=(const Dog &other)
     std::cout << "Dog assignation operator called." << std::endl;
     if (this != &other)
     {
+        Animal::operator=(other);
         delete this->_brain;
         this->_brain = new Brain(*other._brain);
-        Animal::operator=(other);
     }
     return (*this);
 }

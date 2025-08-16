@@ -6,7 +6,7 @@
 /*   By: nolecler <nolecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 15:26:39 by nolecler          #+#    #+#             */
-/*   Updated: 2025/08/14 21:40:13 by nolecler         ###   ########.fr       */
+/*   Updated: 2025/08/16 13:09:37 by nolecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ Cat::Cat(const Cat &copy) : Animal(copy)
 Cat& Cat::operator=(const Cat &other)
 {
     std::cout << "Cat assignation operator called." << std::endl;
-    if (this != &other)// verif si != auto affectation
+    if (this != &other)
     {
+        Animal::operator=(other);
         delete this->_brain;
         this->_brain = new Brain(*other._brain);
-        Animal::operator=(other); // copie les attributs de animal (_type)
     }
     return (*this);
 }
@@ -51,7 +51,7 @@ void Cat::makeSound() const
     std::cout << "Miaouuu!" << std::endl;
 }
 
-// on recupere un pointeur (adresse) vers l'objet Brain
+
 Brain* Cat::getBrain() const
 {
     return (this->_brain);
